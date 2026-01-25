@@ -2,6 +2,7 @@ import logging
 from fastapi import FastAPI
 from .api.v1.router import app_router
 from .core import logger
+from fastapi.middleware.cors import CORSMiddleware
 
 # Configure logging is handled by core.logger module
 
