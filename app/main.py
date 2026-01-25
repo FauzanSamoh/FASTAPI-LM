@@ -11,4 +11,13 @@ app = FastAPI(
     description="A service that provides AI-based predictions via RESTful API.",
 )
 
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["*"],
+)
+
 app.include_router(app_router, prefix="/api/v1")
